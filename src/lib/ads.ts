@@ -14,7 +14,7 @@ export function nextLink(): string {
   const key = "earnx-link-index";
   const i = Number(localStorage.getItem(key) ?? "0") % DIRECT_LINKS.length;
   localStorage.setItem(key, String((i + 1) % DIRECT_LINKS.length));
-  return DIRECT_LINKS[i];
+  return DIRECT_LINKS[i] ?? DIRECT_LINKS[0]!;
 }
 
 export const PHOTOS = Array.from({ length: 100 }, (_, i) => {
